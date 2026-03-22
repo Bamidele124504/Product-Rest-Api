@@ -20,7 +20,7 @@ export class ProductsService {
       ...createProductDto,
       owner: { id: userId },
     });
-
+            (product as any).owner = {id:userId};
     return this.productRepository.save(product);
   }
 
